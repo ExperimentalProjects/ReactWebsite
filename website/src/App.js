@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { StyleSheet, css } from 'aphrodite';
 import './App.css';
+
+import {getWidth, getHeight} from './utils/config';
+import ProfilePicture from './containers/ProfilePicture';
+import Links from './containers/Links';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <MuiThemeProvider>
+        <div className={css(styles.app)}>
+           <ProfilePicture/>
+           <Links/>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </MuiThemeProvider>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    app: {
+       display: 'flex',
+       flex: 1,
+       justifyContent: 'center',
+       height: getHeight(),
+       width: getWidth(),
+       backgroundColor: '#008080'
+    }
+});
 
 export default App;
