@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div className={css(styles.app)}>
-           <ProfilePicture/>
+           <ProfilePicture />
            <Links/>
         </div>
       </MuiThemeProvider>
@@ -24,10 +24,11 @@ const styles = StyleSheet.create({
     app: {
        display: 'flex',
        flex: 1,
-       justifyContent: 'center',
+       flexDirection:'column',
+       justifyContent: 'flex-start',
        height: getHeight(),
        width: getWidth(),
-       backgroundColor: '#008080'
+       backgroundColor: '#008080',
     }
 });
 
