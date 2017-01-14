@@ -4,13 +4,16 @@
   "homepage": "https://abhishekcode.github.io/",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.4"
+    "react-scripts": "0.8.4",
+    "redux-logger": "^2.7.4"
   },
   "dependencies": {
     "aphrodite": "^1.1.0",
     "material-ui": "^0.16.6",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
