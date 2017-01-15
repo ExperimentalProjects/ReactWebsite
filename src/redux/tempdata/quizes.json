@@ -16,7 +16,7 @@
                 "text": "Dil Chahta hai"
                 }
           ],
-     "answer": 1,
+     "answer": 0,
      "explanation": "explanation about answer"
    },
    {
@@ -36,7 +36,7 @@
                 "text": "Sooryavansham"
                 }
           ],
-     "answer": 1,
+     "answer": 0,
      "explanation": "explanation about answer"
    },
    {
@@ -56,7 +56,7 @@
                 "text": "Roy"
                 }
           ],
-     "answer": 1,
+     "answer": 0,
      "explanation": "explanation about answer"
    }   
 ]
