@@ -1,29 +1,32 @@
-import quizList from '../tempdata/quizes';
+import moviequiz from '../tempdata/quizes';
 
-const ACTION_LOAD_DUMMY_QUIZES = 'LOAD_DUMMY_QUIZES';
-const ACTION_LOAD_QUIZES= 'LOAD_QUIZES';
+const LOAD_QUIZ_LIST = "LOAD_QUIZ_LIST";
+const LOAD_SELECTED_QUIZ = "LOAD_SELECTED_QUIZ";
 
 // reducer function to load hobby chefs and related data
 export function reducer(state = {}, action) {
   switch(action.type) {
-    case ACTION_LOAD_DUMMY_QUIZES:
-      return {...state, dummyQuizList: action.data};
-    case ACTION_LOAD_QUIZES:
-      return {...state, quizes: action.data};
+    case LOAD_QUIZ_LIST:
+        return {...state, quizList: action.data};
+    case LOAD_SELECTED_QUIZ:
+      return {...state, selectedQuiz: action.data};
     default:
       return state;
   }
 }
 
-export const getDummyQuiz = () => {
+export const loadQuizList = () => {
+   let quizList = [moviequiz];
+   return {
+      type: LOAD_QUIZ_LIST , data: quizList
+   }
+}
+
+export const loadSelectedQuiz = (quiz) => {
   return {
-    type: ACTION_LOAD_DUMMY_QUIZES , data: quizList
+    type: LOAD_SELECTED_QUIZ , data: quiz
   }
 };
 
-export const getQuiz = (value) => {
-  return {
-    type: ACTION_LOAD_QUIZES , data: value
-  }
-}
+
 

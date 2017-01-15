@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import {getDummyQuiz} from '../../redux/reducers/quiz'
 import Question from './Question';
 
 class Quiz extends Component {
@@ -13,7 +11,6 @@ class Quiz extends Component {
         questionIndex: 0,
         answerd: false
       };
-      this.props.dispatch(getDummyQuiz());
   };
 
   _nextQuestion = () => {
@@ -21,8 +18,8 @@ class Quiz extends Component {
   }
   
   _getQuestion = () => {
-     if(this.props.quizlist) {
-         return this.props.quizlist[this.state.questionIndex];
+     if(this.props.quiz) {
+         return this.props.quiz.questions[this.state.questionIndex];
      }
      return undefined;
   }
@@ -60,7 +57,7 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
     console.log("State  loaded ", state);
   return {
-     quizlist: state.quiz.dummyQuizList || undefined
+     quiz: state.quiz.selectedQuiz || undefined
   };
 }
 export default connect(mapStateToProps) (Quiz);
